@@ -19,6 +19,7 @@ RUN apk update && apk add \
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/${TARGETPLATFORM}/kubectl" && \
     chmod +x ./kubectl /usr/local/bin/entrypoint.sh && \
     mv ./kubectl /usr/local/bin/kubectl && \
+    kubectl version --short && \
     echo -e 'source /usr/share/bash-completion/bash_completion\nsource <(kubectl completion bash)' >>~/.bashrc
 
 ENTRYPOINT ["entrypoint.sh"]
