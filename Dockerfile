@@ -8,6 +8,7 @@ RUN apk update && apk add \
     bash \
     bash-completion \
     busybox-extras \
+    dnsutils \
     net-tools \
     vim \
     curl \
